@@ -8,9 +8,10 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+  "install-all": "npm install && npm install --prefix backend && npm install --prefix netflix-ui",
+  "build": "npm run build --prefix netflix-ui",
+  "start": "node backend/server.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,3 +24,4 @@
   },
   "proxy": "http://localhost:5000"
 }
+
