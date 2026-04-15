@@ -13,8 +13,13 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-User.insertMany(users)
-  .then(() => console.log("Data inserted successfully"))
-  .catch((err) => console.log(err));
+try{
+  await User.deleteMany({});
+  await User.insertMany(DataTransfer,{ ordered: false });
+  console.log("Sample users inserted successfully.");
+} catch(error){
+  console.log("Error inserting sample users:", error.message);
+}
+    
 
 module.exports = User;
