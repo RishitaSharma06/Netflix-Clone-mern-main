@@ -21,13 +21,7 @@ app.get('/', (req, res) => {
 
 app.use("/api/user", userRoutes);
 
-const path = require('path');
 
-app.use(express.static(path.join(__dirname, "../netflix-ui/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../netflix-ui/build", "index.html"));
-});
 
 app.listen(5000, () => {
   console.log("server started on port 5000");
